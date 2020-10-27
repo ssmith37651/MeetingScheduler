@@ -1,0 +1,26 @@
+<h1>View <%= pluralize(@participants.count, "Participants") %></h1>
+<table cellspacing="10" cellpadding="10">
+	<thead>
+		<tr>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Email Address</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @participants.each do |participant| %>
+		<tr>
+			<td><%= participant.first_name %></td>
+			<td><%= participant.last_name %></td>
+			<td><%= participant.email_address %></td>
+			<td><a href="/participants/<%= participant.id %>">Show</a> |
+				<a href="/participants/<%= participant.id %>">Edit</a> |
+				<a href="/participants/<%= participant.id %>" data-method="delete"
+					data-confirm="Are you sure?">Delete</a>
+			</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+<a href="/participants/new">Create Participants</a>

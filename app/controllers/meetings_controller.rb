@@ -12,6 +12,7 @@ class MeetingsController < ApplicationController
 		if meeting.save
 			redirect_to "/meetings"
 		else
+			flash[:errors] = meeting.errors.full_messages
 			redirect_to "/meetings/new"
 		end
 	end

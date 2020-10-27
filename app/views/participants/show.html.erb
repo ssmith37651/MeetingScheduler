@@ -1,0 +1,20 @@
+<h1>View Participant's <%= pluralize(@meetings.count, "Meeting(s)") %></h1>
+<table cellspacing="10" cellpadding="10">
+	<thead>
+		<tr>
+			<th>Meeting Name</th>
+			<th>Meeting Description</th>
+			<th>Location</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @meetings.each do |meeting| %>
+		<tr>
+			<td><%= meeting.meeting_name %></td>
+			<td><%= meeting.description %></td>
+			<td><%= meeting.location %></td>		
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+<a href="/participants">View Participants</a>

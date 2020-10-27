@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get "participants/new" => "participants#new"
   post "participants" => "participants#create"
   get "meetings/:id" => "meetings#show"
+  get "participants/:id" => "participants#show"
 end

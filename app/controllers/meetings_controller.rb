@@ -17,6 +17,10 @@ class MeetingsController < ApplicationController
 		end
 	end
 
+	def show
+		@participants = Meeting.find(params[:id]).participants
+	end
+
 	private
 	def meeting_params
 		params.require(:meeting).permit(:meeting_name, :description, :location)

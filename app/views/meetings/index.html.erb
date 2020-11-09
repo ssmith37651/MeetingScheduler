@@ -14,9 +14,9 @@
 			<td><%= meeting.meeting_name %></td>
 			<td><%= meeting.description %></td>
 			<td><%= meeting.location %></td>
-			<td><a href="/meetings/<%= meeting.id %>">Show</a> |
-				<a href="/meetings/<%= meeting.id %>">Edit</a> |
-				<a href="/meetings/<%= meeting.id %>">Invite</a> |
+			<td><a href="/meetings/<%= meeting.id %>">Participants</a> |
+				<a href="/meetings/<%= meeting.id %>/edit">Edit</a> |
+				<a href="/meetings/<%= meeting.id %>/invite">Invite</a> |
 				<a href="/meetings/<%= meeting.id %>" data-method="delete"
 					data-confirm="Are you sure?">Delete</a>
 			</td>

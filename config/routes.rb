@@ -8,4 +8,10 @@ Rails.application.routes.draw do
   post "participants" => "participants#create"
   get "meetings/:id" => "meetings#show"
   get "participants/:id" => "participants#show"
+  get "meetings/:id/edit" => "meetings#edit"
+  patch "meetings/:id" => "meetings#update"
+  get "participants/:id/edit" => "participants#edit"
+  patch "participants/:id" => "participants#update"
+  delete "meetings/:id" => "meetings#destroy"
+  delete "participants/:id" => "participants#destroy"
 end

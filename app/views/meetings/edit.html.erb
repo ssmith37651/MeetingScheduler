@@ -1,1 +1,24 @@
 <h1>Edit <%= @meeting.meeting_name %></h1>
+<form action="/meetings/<%= @meeting.id %> " method="post">
+	<input type="hidden" name="_method" value="patch">
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+	<p>
+		<label>Meeting Name:</label>
+		<input type="text" name="meeting[meeting_name]" value="<%= @meeting.meeting_name %>">
+	</p>
+	<p>
+		<label>Description:</label>
+		<input type="text" name="meeting[description]" value="<%= @meeting.description %>">
+	</p>
+	<p>
+		<label>Location:</label>
+		<input type="text" name="meeting[location]" value="<%= @meeting.location %>">
+	</p>
+	<input type="submit" value="Update">
+</form>
+
+<% if flash[:errors] %>
+	<% flash[:errors].each do |e| %>
+	<p><%= e %></p>
+	<% end %>
+<% end %>

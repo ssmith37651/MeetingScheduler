@@ -21,6 +21,26 @@ class MeetingsController < ApplicationController
 		@participants = Meeting.find(params[:id]).participants
 	end
 
+	def edit
+		@meeting = Meeting.find(params[:id])
+	end
+
+	def update
+		meeting = Meeting.find(params[:id])
+		if meeting.update(meeting_params)
+			redirect_to "/meetings"
+		else
+			flash[:errors] = meeting.errors.full_messages
+			redirect_to "/meetings/#{meeting.id}/edit"
+		end
+	end
+
+	def destroy
+		meeting = Meeting.find(params[:id])
+		meeting.destroy
+		redirect_to "/meetings"
+	end
+
 	private
 	def meeting_params
 		params.require(:meeting).permit(:meeting_name, :description, :location)

@@ -1,14 +1,52 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>MeetingScheduler</title>
-    <%= csrf_meta_tags %>
+<head>
+	<title>MeetingScheduler</title>
+	<%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-  <body>
-    <%= yield %>
-  </body>
+	<script>
+		function goBack() {
+			window.history.back()
+		}
+</script>
+</head>
+
+<style type="text/css">
+	body { background: DimGrey !important; }
+</style>
+
+<body background="bg-dark">
+	<p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p>
+
+	<header class="navbar  navbar-inverse">
+		<div class="navbar-class">
+			<div class="container">
+
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+
+				<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+					<a class="navbar-brand" href="#">Navigation</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+						<div class="navbar-nav">
+							<a class="nav-link active" href="/meetings">Meetings <span class="sr-only">(current)</span></a>
+							<a class="nav-link active" href="/participants">Participants</a>
+							<a class="nav-link active" href="/invite">Invite</a>
+						</div>
+					</div>
+				</nav>
+
+			</div>
+		</div>
+	</header>
+
+	<%= yield %>
+</body>
 </html>

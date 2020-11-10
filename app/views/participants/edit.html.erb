@@ -1,4 +1,4 @@
-<h1>Edit <%= @participant.first_name %> <%= @participant.last_name %></h1>
+<h1 class="text-white".text-white>Edit <%= @participant.first_name %> <%= @participant.last_name %></h1>
 <form action="/participants/<%= @participant.id %> " method="post">
 	<input type="hidden" name="_method" value="patch">
 	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">

@@ -1,5 +1,5 @@
-<h1>View Participant's <%= pluralize(@meetings.count, "Meeting(s)") %></h1>
-<table cellspacing="10" cellpadding="10">
+<h1 class="text-white".text-white>View Participant's <%= pluralize(@meetings.count, "Meeting") %></h1>
+<table class="table table-striped table-dark table-bordered">
 	<thead>
 		<tr>
 			<th>Meeting Name</th>
@@ -17,4 +17,4 @@
 		<% end %>
 	</tbody>
 </table>
-<a href="/participants">View Participants</a>
+<button onclick="goBack()">Go Back</button>

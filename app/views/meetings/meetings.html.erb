@@ -1,10 +1,11 @@
-<h1>View Meeting's <%= pluralize(@participants.count, "Participant") %></h1>
-<table>
+<h1 class="text-white".text-white>View Meeting's <%= pluralize(@participants.count, "Participant") %></h1>
+<table class="table table-striped table-dark">
 	<thead>
 		<tr>
 			<th>First Name</th>
 			<th>Last Name</th>
 			<th>Email Address</th>
+			<th>Actions</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -12,9 +13,13 @@
 		<tr>
 			<td><%= participant.first_name %></td>
 			<td><%= participant.last_name %></td>
-			<td><%= participant.email_address %></td>		
+			<td><%= participant.email_address %></td>
+			<td>
+				<a class="btn btn-info" href="/participants/<%= participant.id %>">Meetings</a>|
+				<a class="btn btn-warning" href="/participants/<%= participant.id %>/edit">Edit</a>
+			</td>		
 		</tr>
 		<% end %>
 	</tbody>
 </table>
-<a href="/meetings">View Meetings</a>
+<button class="btn btn-primary" onclick="goBack()">Go Back</button>

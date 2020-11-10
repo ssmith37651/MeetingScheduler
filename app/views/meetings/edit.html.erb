@@ -1,4 +1,4 @@
-<h1>Edit <%= @meeting.meeting_name %></h1>
+<h1 class="text-white".text-white>Edit <%= @meeting.meeting_name %></h1>
 <form action="/meetings/<%= @meeting.id %> " method="post">
 	<input type="hidden" name="_method" value="patch">
 	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">

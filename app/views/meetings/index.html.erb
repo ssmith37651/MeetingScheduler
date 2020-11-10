@@ -1,11 +1,11 @@
-<h1>View <%= pluralize(@meetings.count, "Meetings") %></h1>
-<table cellspacing="10" cellpadding="10">
+<h1 class="text-white".text-white>View <%= pluralize(@meetings.count, "Meetings") %></h1>
+<table class="table table-striped table-dark table-bordered">
 	<thead>
 		<tr>
-			<th>Meeting Name</th>
-			<th>Description</th>
-			<th>Location</th>
-			<th>Actions</th>
+			<th scope="col">Meeting Name</th>
+			<th scope="col">Description</th>
+			<th scope="col">Location</th>
+			<th scope="col">Actions</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -14,14 +14,15 @@
 			<td><%= meeting.meeting_name %></td>
 			<td><%= meeting.description %></td>
 			<td><%= meeting.location %></td>
-			<td><a href="/meetings/<%= meeting.id %>">Participants</a> |
-				<a href="/meetings/<%= meeting.id %>/edit">Edit</a> |
-				<a href="/meetings/<%= meeting.id %>/invite">Invite</a> |
-				<a href="/meetings/<%= meeting.id %>" data-method="delete"
+			<td>
+				<a class="btn btn-info" href="/meetings/<%= meeting.id %>">Participants</a> |
+				<a class="btn btn-warning" href="/meetings/<%= meeting.id %>/edit">Edit</a> |
+				<a class="btn btn-primary" href="/meetings/<%= meeting.id %>/invite">Invite</a> |
+				<a class="btn btn-danger" href="/meetings/<%= meeting.id %>" data-method="delete"
 					data-confirm="Are you sure?">Delete</a>
 			</td>
 		</tr>
 		<% end %>
 	</tbody>
 </table>
-<a href="/meetings/new">Create Meetings</a>
+<a class="btn btn-primary" href="/meetings/new">Create Meetings</a>
